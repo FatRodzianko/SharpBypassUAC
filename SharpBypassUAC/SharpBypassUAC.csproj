@@ -71,6 +71,7 @@
     <Compile Include="AlwaysNotify.cs" />
     <Compile Include="EventVwr.cs" />
     <Compile Include="FodHelper.cs" />
+    <Compile Include="Sdclt.cs" />
     <Compile Include="SharpBypassUAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

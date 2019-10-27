@@ -13,6 +13,8 @@ namespace SharpBypassUAC
     {
         public EventVwr(byte[] encodedCommand)
         {
+            //Credit: https://enigma0x3.net/2016/08/15/fileless-uac-bypass-using-eventvwr-exe-and-registry-hijacking/
+
             //Check if UAC is set to 'Always Notify'
             AlwaysNotify alwaysnotify = new AlwaysNotify();
 

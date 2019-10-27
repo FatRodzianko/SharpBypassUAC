@@ -12,6 +12,8 @@ namespace SharpBypassUAC
     {
         public FodHelper (byte[] encodedCommand)
         {
+            //Credit: https://github.com/winscripting/UAC-bypass/blob/master/FodhelperBypass.ps1
+
             //Check if UAC is set to 'Always Notify'
             AlwaysNotify alwaysnotify = new AlwaysNotify();
 
