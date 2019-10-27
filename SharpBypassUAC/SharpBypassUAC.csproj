@@ -69,11 +69,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlwaysNotify.cs" />
+    <Compile Include="DiskCleanup.cs" />
     <Compile Include="EventVwr.cs" />
     <Compile Include="FodHelper.cs" />
     <Compile Include="Sdclt.cs" />
     <Compile Include="SharpBypassUAC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slui.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

