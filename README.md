@@ -72,6 +72,6 @@ schtasks /Run /TN \\Microsoft\\Windows\\DiskCleanup\\SilentCleanup /I
 
 **slui**: [bytecode77's](https://github.com/bytecode77) [slui file handler hijack tool](https://github.com/bytecode77/slui-file-handler-hijack-privilege-escalation)
 
-**DiskCleanup**: [enigma0x3's](https://github.com/enigma0x3) Bypassing UAC on Windows 10 using Disk Cleanup [blog post](https://enigma0x3.net/2016/07/22/bypassing-uac-on-windows-10-using-disk-cleanup/)
+**DiskCleanup**: [enigma0x3's](https://github.com/enigma0x3) Bypassing UAC on Windows 10 using Disk Cleanup [blog post](https://enigma0x3.net/2016/07/22/bypassing-uac-on-windows-10-using-disk-cleanup/) and [gushmazuko's](https://github.com/gushmazuko) [DiskCleanupBypass_direct.ps1 script](https://github.com/gushmazuko/WinBypass/blob/master/DiskCleanupBypass_direct.ps1)
 
 Many of these were discovered by going through the **UACME** project found on [github](https://github.com/hfiref0x/UACME/).
