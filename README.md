@@ -57,6 +57,7 @@ Registry modifications to:
 Registry modifications to:
 - HKCU\Environment
   - Modifies the "windir" value with the command to execute
+
 Starts the "\Microsoft\Windows\DiskCleanup\SilentCleanup" scheduled task. Example:
 
 schtasks /Run /TN \\Microsoft\\Windows\\DiskCleanup\\SilentCleanup /I
